@@ -1,0 +1,109 @@
+2015/05/15 22:10:58 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "simple".' in C:\wamp\www\DW\tarea2\yii-framework\web\CController.php:878
+Stack trace:
+#0 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(782): CController->renderPartial('simple', NULL, true)
+#1 C:\wamp\www\DW\tarea2\protected\controllers\SiteController.php(29): CController->render('simple')
+#2 C:\wamp\www\DW\tarea2\yii-framework\web\actions\CInlineAction.php(49): SiteController->actionSimple()
+#3 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(282): CController->run('simple')
+#7 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(141): CWebApplication->runController('site/simple')
+#8 C:\wamp\www\DW\tarea2\yii-framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\wamp\www\DW\tarea2\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/DW/tarea2/?r=site/simple
+HTTP_REFERER=http://localhost/DW/tarea2/
+---
+2015/05/15 22:12:06 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "simple".' in C:\wamp\www\DW\tarea2\yii-framework\web\CController.php:878
+Stack trace:
+#0 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(782): CController->renderPartial('simple', NULL, true)
+#1 C:\wamp\www\DW\tarea2\protected\controllers\SiteController.php(29): CController->render('simple')
+#2 C:\wamp\www\DW\tarea2\yii-framework\web\actions\CInlineAction.php(49): SiteController->actionSimple()
+#3 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(282): CController->run('simple')
+#7 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(141): CWebApplication->runController('site/simple')
+#8 C:\wamp\www\DW\tarea2\yii-framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\wamp\www\DW\tarea2\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/DW/tarea2/?r=site/simple
+HTTP_REFERER=http://localhost/DW/tarea2/
+---
+2015/05/15 22:12:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "basica".' in C:\wamp\www\DW\tarea2\yii-framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(270): CController->missingAction('basica')
+#1 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(282): CController->run('basica')
+#2 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(141): CWebApplication->runController('site/basica')
+#3 C:\wamp\www\DW\tarea2\yii-framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\DW\tarea2\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/DW/tarea2/?r=site/basica
+HTTP_REFERER=http://localhost/DW/tarea2/
+---
+2015/05/15 22:12:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "basica".' in C:\wamp\www\DW\tarea2\yii-framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(270): CController->missingAction('basica')
+#1 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(282): CController->run('basica')
+#2 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(141): CWebApplication->runController('site/basica')
+#3 C:\wamp\www\DW\tarea2\yii-framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\DW\tarea2\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/DW/tarea2/?r=site/basica
+HTTP_REFERER=http://localhost/DW/tarea2/
+---
+2015/05/15 22:13:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "basica".' in C:\wamp\www\DW\tarea2\yii-framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(270): CController->missingAction('basica')
+#1 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(282): CController->run('basica')
+#2 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(141): CWebApplication->runController('site/basica')
+#3 C:\wamp\www\DW\tarea2\yii-framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\DW\tarea2\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/DW/tarea2/?r=site/basica
+HTTP_REFERER=http://localhost/DW/tarea2/
+---
+2015/05/15 22:13:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "basica".' in C:\wamp\www\DW\tarea2\yii-framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(270): CController->missingAction('basica')
+#1 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(282): CController->run('basica')
+#2 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(141): CWebApplication->runController('site/basica')
+#3 C:\wamp\www\DW\tarea2\yii-framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\DW\tarea2\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/DW/tarea2/?r=site/basica
+HTTP_REFERER=http://localhost/DW/tarea2/
+---
+2015/05/15 22:13:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "basica".' in C:\wamp\www\DW\tarea2\yii-framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(270): CController->missingAction('basica')
+#1 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(282): CController->run('basica')
+#2 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(141): CWebApplication->runController('site/basica')
+#3 C:\wamp\www\DW\tarea2\yii-framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\DW\tarea2\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/DW/tarea2/?r=site/basica
+HTTP_REFERER=http://localhost/DW/tarea2/
+---
+2015/05/15 22:13:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "basica".' in C:\wamp\www\DW\tarea2\yii-framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(270): CController->missingAction('basica')
+#1 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(282): CController->run('basica')
+#2 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(141): CWebApplication->runController('site/basica')
+#3 C:\wamp\www\DW\tarea2\yii-framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\DW\tarea2\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/DW/tarea2/?r=site/basica
+HTTP_REFERER=http://localhost/DW/tarea2/
+---
+2015/05/15 22:14:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "basica".' in C:\wamp\www\DW\tarea2\yii-framework\web\CController.php:483
+Stack trace:
+#0 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(270): CController->missingAction('basica')
+#1 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(282): CController->run('basica')
+#2 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(141): CWebApplication->runController('site/basica')
+#3 C:\wamp\www\DW\tarea2\yii-framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\wamp\www\DW\tarea2\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/DW/tarea2/?r=site/basica
+HTTP_REFERER=http://localhost/DW/tarea2/?r=site
+---
