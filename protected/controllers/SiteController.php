@@ -26,11 +26,23 @@ class SiteController extends Controller
 
     public function actionBasica()
     {
-        $this->render('basica');
+        $con = Yii::app()->db;
+        $emps = $con->createCommand("
+    		select * from employees where emp_no>10000 and emp_no<10010
+    		")->queryAll();
+        $this->render('basica', array(
+            'emps' => $emps
+        ));
     }
     public function actionMedia()
     {
-        $this->render('media');
+        $con = Yii::app()->db;
+        $emps = $con->createCommand("
+    		select * from employees where emp_no>5000 and emp_no<20000
+    		")->queryAll();
+        $this->render('basica', array(
+            'emps' => $emps
+        ));
     }
     public function actionAvanzada()
     {

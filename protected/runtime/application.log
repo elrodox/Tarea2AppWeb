@@ -107,3 +107,20 @@ Stack trace:
 REQUEST_URI=/DW/tarea2/?r=site/basica
 HTTP_REFERER=http://localhost/DW/tarea2/?r=site
 ---
+2015/05/15 23:08:47 [error] [php] Use of undefined constant emp_no - assumed 'emp_no' (C:\wamp\www\DW\tarea2\protected\views\site\basica.php:38)
+Stack trace:
+#0 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\wamp\www\DW\tarea2\protected\controllers\SiteController.php(35): SiteController->render()
+#3 C:\wamp\www\DW\tarea2\yii-framework\web\actions\CInlineAction.php(49): SiteController->actionBasica()
+#4 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(286): SiteController->runAction()
+#6 C:\wamp\www\DW\tarea2\yii-framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\wamp\www\DW\tarea2\yii-framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\wamp\www\DW\tarea2\yii-framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\wamp\www\DW\tarea2\index.php(13): CWebApplication->run()
+REQUEST_URI=/DW/tarea2/index.php?r=site/basica
+in C:\wamp\www\DW\tarea2\protected\views\site\basica.php (38)
+in C:\wamp\www\DW\tarea2\protected\controllers\SiteController.php (35)
+in C:\wamp\www\DW\tarea2\index.php (13)
