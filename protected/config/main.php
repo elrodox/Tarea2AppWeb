@@ -32,6 +32,10 @@ return array(
 
 	// application components
 	'components'=>array(
+        'cache'  => array(
+            'class'=>'system.caching.CDbCache',
+            'class'  => 'system.caching.CFileCache'
+        ),
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,

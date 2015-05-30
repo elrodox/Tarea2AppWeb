@@ -36,13 +36,19 @@ class SiteController extends Controller
     }
     public function actionMedia()
     {
-        $con = Yii::app()->db;
-        $emps = $con->createCommand("
-    		select * from employees where emp_no>5000 and emp_no<20000
-    		")->queryAll();
+//        $con = Yii::app()->db;
+//        $emps = $con->createCommand("
+//    		select * from employees where emp_no>5000 and emp_no<20000
+//    		")->queryAll();
+
+        $query = 'select * from employees where emp_no>5000 and emp_no<20000';
+        $dependency = new CDbCacheDependency('SELECT MAX(emp_no) FROM employees');
+        $emps = Yii::app()->db->cache(1000, $dependency)->createCommand($query)->queryAll();
+
         $this->render('resultados', array(
             'emps' => $emps
         ));
+
     }
 
 
