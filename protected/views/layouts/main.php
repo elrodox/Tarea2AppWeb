@@ -1,5 +1,7 @@
 <?php /* @var $this Controller */ ?>
 <!doctype html>
+
+<!-- Iteración 2 -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
