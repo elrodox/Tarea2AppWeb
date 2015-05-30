@@ -26,21 +26,16 @@ class SiteController extends Controller
 
     public function actionBasica()
     {
-        $con = Yii::app()->db;
-        $emps = $con->createCommand("
-    		select * from employees where emp_no>10000 and emp_no<10010
-    		")->queryAll();
+        $query = 'select * from employees where emp_no>10000 and emp_no<10010';
+        $dependency = new CDbCacheDependency('SELECT MAX(emp_no) FROM employees');
+        $emps = Yii::app()->db->cache(1000, $dependency)->createCommand($query)->queryAll();
+
         $this->render('resultados', array(
             'emps' => $emps
         ));
     }
     public function actionMedia()
     {
-//        $con = Yii::app()->db;
-//        $emps = $con->createCommand("
-//    		select * from employees where emp_no>5000 and emp_no<20000
-//    		")->queryAll();
-
         $query = 'select * from employees where emp_no>5000 and emp_no<20000';
         $dependency = new CDbCacheDependency('SELECT MAX(emp_no) FROM employees');
         $emps = Yii::app()->db->cache(1000, $dependency)->createCommand($query)->queryAll();
@@ -51,14 +46,9 @@ class SiteController extends Controller
 
     }
 
-
-//    datos de empleados de depto de Marketing
-//    que tengan un salario superior a 70.000
-//    y que la fecha from_date de su titulo sea posterior a 1990-01-01
     public function actionAvanzada()
     {
-        $con = Yii::app()->db;
-        $emps = $con->createCommand("
+        $query = "
     		select * from salaries as s
             inner join
             (select e.emp_no, e.birth_date, e.first_name, e.last_name, e.gender, e.hire_date
@@ -76,7 +66,10 @@ class SiteController extends Controller
             and s.salary > 10000
             and s.from_date between '1990-01-01' and '2000-01-01'
             order by s.salary asc
-    		")->queryAll();
+    		";
+        $dependency = new CDbCacheDependency('SELECT MAX(emp_no) FROM employees');
+        $emps = Yii::app()->db->cache(1000, $dependency)->createCommand($query)->queryAll();
+
         $this->render('resultados', array(
             'emps' => $emps
         ));
