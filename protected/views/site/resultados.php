@@ -43,6 +43,28 @@
           <td><?php echo $emp['hire_date'] ?></td>
       </tr>
   <?php endforeach ?>
-
   </tbody>
 </table>
+
+<?php
+    if(!isset($_GET["page"])){
+      $_GET["page"]=1;
+    }
+
+    $this->widget(
+      'CLinkPager',
+      array(
+        'pages' => $pages,
+        'maxButtonCount'=>"3:3", //Rango de links de paginas a mostrar
+        'header' =>"<div class='paginacion'>",
+        'footer' =>"</div>",
+        'nextPageLabel'=>"Siguiente",
+        'prevPageLabel'=>"Anterior",
+        "firstPageLabel"=>"Primera",
+        "lastPageLabel"=>"Última",
+        "selectedPageCssClass"=>"active",
+        "hiddenPageCssClass"=>"disable",
+        "htmlOptions"=>array("class"=>"pagination"),
+      )
+    );
+  ?>

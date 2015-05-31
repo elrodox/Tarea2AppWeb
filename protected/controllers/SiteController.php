@@ -26,28 +26,56 @@ class SiteController extends Controller
 
     public function actionBasica()
     {
-        $query = 'select * from employees where emp_no>10000 and emp_no<10010';
+        // PAGINACION
+        $count=Employees::model()->countRegistros();
+        $pages=new CPagination($count);
+        $cantidad=$pages->pageSize=20;
+        if(!isset($_GET["page"])){ $_GET["page"]=1; }
+        $inicio=($_GET["page"]-1)*$cantidad;
+        
+        // CONSULTA CON CACHE
+        $query = 'select * from employees where emp_no>10000 and emp_no<10010 limit '.$inicio.','.$cantidad;
         $dependency = new CDbCacheDependency('SELECT MAX(emp_no) FROM employees');
         $emps = Yii::app()->db->cache(1000, $dependency)->createCommand($query)->queryAll();
 
-        $this->render('resultados', array(
-            'emps' => $emps
+        // RENDER RESULTADOS
+        $this->render('resultados',array(
+            "emps"=>$emps,
+            "pages"=>$pages
         ));
     }
     public function actionMedia()
     {
-        $query = 'select * from employees where emp_no>5000 and emp_no<20000';
+        // PAGINACION
+        $count=Employees::model()->countRegistros();
+        $pages=new CPagination($count);
+        $cantidad=$pages->pageSize=20;
+        if(!isset($_GET["page"])){ $_GET["page"]=1; }
+        $inicio=($_GET["page"]-1)*$cantidad;
+
+        // CONSULTA CON CACHE
+        $query = 'select * from employees where emp_no>5000 and emp_no<20000 limit '.$inicio.','.$cantidad;
         $dependency = new CDbCacheDependency('SELECT MAX(emp_no) FROM employees');
         $emps = Yii::app()->db->cache(1000, $dependency)->createCommand($query)->queryAll();
 
-        $this->render('resultados', array(
-            'emps' => $emps
+        // RENDER RESULTADOS
+        $this->render('resultados',array(
+            "emps"=>$emps,
+            "pages"=>$pages
         ));
 
     }
 
     public function actionAvanzada()
     {
+        // PAGINACION
+        $count=Employees::model()->countRegistros();
+        $pages=new CPagination($count);
+        $cantidad=$pages->pageSize=20;
+        if(!isset($_GET["page"])){ $_GET["page"]=1; }
+        $inicio=($_GET["page"]-1)*$cantidad;
+
+        // CONSULTA CON CACHE
         $query = "
     		select * from salaries as s
             inner join
@@ -66,14 +94,27 @@ class SiteController extends Controller
             and s.salary > 10000
             and s.from_date between '1990-01-01' and '2000-01-01'
             order by s.salary asc
-    		";
+            limit ".$inicio.",".$cantidad;
+
         $dependency = new CDbCacheDependency('SELECT MAX(emp_no) FROM employees');
         $emps = Yii::app()->db->cache(1000, $dependency)->createCommand($query)->queryAll();
 
-        $this->render('resultados', array(
-            'emps' => $emps
+        // RENDER RESULTADOS
+        $this->render('resultados',array(
+            "emps"=>$emps,
+            "pages"=>$pages
         ));
     }
 
 
 }
+
+
+
+
+
+        
+
+
+
+

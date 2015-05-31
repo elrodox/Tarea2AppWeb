@@ -116,4 +116,21 @@ class Employees extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+
+	public function countRegistros(){
+		$con = Yii::app()->db;
+        $count = $con->createCommand("
+    		SELECT COUNT(emp_no) as count FROM employees
+    		")->queryAll();
+        return $count[0]["count"];
+	}
+	     
+
+	// public function getEmpleados($inicio,$cantidad){
+	//     $this->getUsuarios=$this->connection
+	//             ->createCommand("SELECT * FROM usuarios LIMIT $inicio,$cantidad")
+	//             ->queryAll();
+	//     return $this->getUsuarios;
+	// }
+
 }
